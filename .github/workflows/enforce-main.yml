@@ -1,0 +1,14 @@
+name: Enforce PR to Main
+
+on:
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+    enforce:
+    runs-on: ubuntu-latest
+    steps:
+        name: Check PR Author
+        run: |
+        echo "Only Harshal can push to main directly. Others must use PRs."
