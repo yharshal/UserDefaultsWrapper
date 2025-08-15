@@ -11,7 +11,7 @@ Add the package via Swift Package Manager:
 ```swift
 // In Xcode: File > Add Packages > enter your repo URL
 dependencies: [
-    .package(url: "https://github.com/yourusername/UserDefaultsWrapper.git", from: "1.0.0")
+    .package(url: "https://github.com/yharshal/UserDefaultsWrapper.git", from: "1.0.0")
 ]
 ```
 
