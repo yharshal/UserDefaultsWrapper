@@ -4,6 +4,20 @@
 
 A Swift package that provides a convenient property wrapper for `UserDefaults`.
 
+- ✅ Type-safe access to `UserDefaults`
+- ✅ Easy to use with `@UserDefault`
+- ✅ No boilerplate needed
+- ✅ Supports Primitive Types
+    - Int
+    - Bool
+    - String
+    - Double
+- ✅ UUID for ID
+- ✅ Codable object
+- ✅ Default Value Support
+
+Purpose is to encapsulate the getter and setter logic for user defaults, and offer a clean structure.
+
 ## Installation
 
 Add the package via Swift Package Manager:
@@ -17,10 +31,17 @@ dependencies: [
 
 ## Usage
 
+### Import package
+
 ```swift
 
 import UserDefaultsWrapper
-import Foundation
+
+```
+
+### Define properties using the @UserDefault wrapper:
+
+```swift
 
 struct UserProfile {
     
@@ -39,19 +60,35 @@ struct UserProfile {
     @UserDefault(key: "hasCompletedOnboarding", defaultValue: true)
     static var hasCompletedOnboarding: Bool
 }
+```
 
-@main
-struct ExampleApp {
-    
-    static func main() {
-        UserProfile.hasCompletedOnboarding = true
-        UserProfile.userRatings = 4.5
-        UserProfile.userID = UUID()
-        UserProfile.username = "Harshal"
-        
-        print("Welcome: \(UserProfile.username)")
-    }
-}
+### Access defaut value:
+
+```swift
+
+print("Welcome: \(UserProfile.username)") // Guest
 
 ```
+
+### Update Value:
+
+```swift
+
+UserProfile.username = "Harshal"
+print("Welcome: \(UserProfile.username)") // Harshal
+
+```
+
+### Running the Example
+
+- This package includes an example executable target.
+- Run it locally with:
+
+  ```
+  
+  swift run UserDefaultsWrapperExample
+  
+  ```
+  
+  - It will demonstrate property wrapper in action
 
